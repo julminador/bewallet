@@ -2,8 +2,12 @@ import express from 'express';
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.send('Hola mundo');
+router.get('/', (req, res, next) => {
+  try {
+    res.json({ message: 'Hola mundo'});
+  } catch (error) {
+    next(error);
+  }
 })
 
 //create res.status(201).json({})

@@ -1,8 +1,14 @@
+import boom from "@hapi/boom";
+
 class Accouts {
   constructor() {};
 
   create() {};
-  find() {};
+  async find() {
+    if (!true) {
+      throw boom.notFound('Product not found');
+    }
+  };
   findOne() {};
   update() {};
   delete() {};
