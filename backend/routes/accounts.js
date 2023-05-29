@@ -1,10 +1,12 @@
 import express from 'express';
+import sequelize from '../libs/sequelize.js';
 
 const router = express.Router();
 
-router.get('/', (req, res, next) => {
+router.get('/', async (req, res, next) => {
   try {
-    res.json({ message: 'Hola mundo'});
+    const [data, metadata] = await sequelize.query('SELECT * FROM accounts');
+    res.json({ data, metadata});
   } catch (error) {
     next(error);
   }

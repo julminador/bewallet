@@ -6,7 +6,7 @@ import path from 'path';
 const app = express();
 
 import router from './routes/index.js';
-import config from '../config.js';
+import config from './config.js';
 import { logErrors, errorHandler } from './middlewares/errorHandler.js';
 
 // app.use(cors());
