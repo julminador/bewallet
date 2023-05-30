@@ -15,7 +15,7 @@ app.use(express.json());
 router(app);
 
 // Middlewares
-app.use(logErrors);
+app.use(errorHandler.logErrors);
 app.use(errorHandler.ormErrorHandler);
 app.use(errorHandler.boomErrorHandler);
 app.use(errorHandler.errorHandler);

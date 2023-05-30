@@ -3,7 +3,8 @@ const { Model, DataTypes, Sequelize } = require('sequelize');
 const ACCOUNT_TABLE = 'accounts';
 
 const AccountSchema = {
-  account_id: {
+  accountId: {
+    field: 'account_id',
     allowNull: false,
     autoIncrement: true,
     primaryKey: true,
@@ -28,11 +29,11 @@ const AccountSchema = {
   createdAt: {
     allowNull: false,
     type: DataTypes.DATE,
-    field: 'create_at',
+    field: 'created_at',
     defaultValue: Sequelize.NOW,
   },
   updatedAt: {
-    allowNull: false,
+    allowNull: true,
     type: DataTypes.DATE,
     field: 'updated_at',
     defaultValue: Sequelize.NOW,
@@ -40,8 +41,16 @@ const AccountSchema = {
 }
 
 class Account extends Model {
-  static associate() {
-    // associate
+  static associate(models) {
+    this.hasMany(models.Note, {
+      as: 'credit',
+      foreignKey: 'creditId'
+    });
+
+    this.hasMany(models.Note, {
+      as: 'debit',
+      foreignKey: 'debitId'
+    });
   }
 
   static config(sequelize) {

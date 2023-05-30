@@ -9,7 +9,8 @@
     "dev": "nodemon index.js",
     "lint": "eslint",
     "migrations:generate": "sequelize-cli migration:generate --name",
-    "migrations:run": "npx sequelize-cli db:migrate",
+    "migrations:run": "sequelize-cli db:migrate",
+    "migrations:run-debug": "sequelize-cli db:migrate --debug",
     "migrations:revert": "sequelize-cli db:migrate:undo"
   },
   "keywords": [],
