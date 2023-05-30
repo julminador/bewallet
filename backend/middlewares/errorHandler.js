@@ -1,3 +1,5 @@
+import { ValidationError } from "sequelize";
+
 export function logErrors(error, req, res, next) {
   console.error('[logErrors] ', error);
   next(error);
@@ -16,4 +18,15 @@ export function errorHandler(error, req, res, next) {
   })
 };
 
-export default { logErrors, errorHandler };
+export function ormErrorHandler(error, req, res, next) {
+  if (error instanceof ValidationError) {
+    res.status(409).json({
+      statusCode: 409,
+      message: error.name,
+      errors: error.errors
+    });
+  }
+  next(error);
+}
+
+export default { logErrors, errorHandler, boomErrorHandler, ormErrorHandler };

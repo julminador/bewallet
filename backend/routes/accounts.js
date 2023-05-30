@@ -1,16 +1,9 @@
 import express from 'express';
-import sequelize from '../libs/sequelize.js';
+import accountCtrl from "../controllers/accounts.js";
 
 const router = express.Router();
 
-router.get('/', async (req, res, next) => {
-  try {
-    const [data, metadata] = await sequelize.query('SELECT * FROM accounts');
-    res.json({ data, metadata});
-  } catch (error) {
-    next(error);
-  }
-})
+router.get('/', accountCtrl.getAllAccounts);
 
 //create res.status(201).json({})
 //not found res.status(404).json({})
