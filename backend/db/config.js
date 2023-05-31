@@ -2,12 +2,12 @@ import config from '../config.js';
 
 const USER = encodeURIComponent(config.dbUser);
 const PASSWORD = encodeURIComponent(config.dbPassword);
-const URI = `mysql://${USER}:${PASSWORD}@${config.dbHost}:${config.dbPort}/${config.dbName}`;
+const URI = `${config.dbDialect}://${USER}:${PASSWORD}@${config.dbHost}:${config.dbPort}/${config.dbName}`;
 
 export default {
   development: {
     url: URI,
-    dialect: 'mysql',
+    dialect: config.dbDialect,
     timezone: '-05:00',
     define: {
       timestamps: false
@@ -15,10 +15,15 @@ export default {
   },
   production: {
     url: URI,
-    dialect: 'mysql',
+    dialect: dbDialect,
     timezone: '-05:00',
     define: {
       timestamps: false
+    },
+    dialectOptions: {
+      ssl: {
+        rejectUnauthorized: false,
+      }
     }
   }
 }

@@ -9,6 +9,7 @@ dotenv.config({path: path.resolve(__dirname, '..', '.env')});
 
 const config = {
   env: process.env.NODE_ENV || 'development',
+  isProd: process.env.NODE_ENV === 'production',
   host: process.env.HOST || 'http://localhost',
   port: process.env.PORT || '3001',
   dbUser: process.env.DB_USER,
@@ -16,6 +17,7 @@ const config = {
   dbHost: process.env.DB_HOST,
   dbName: process.env.DB_NAME,
   dbPort: process.env.DB_PORT,
+  dbDialect: process.env.DB_DIALECT,
 }
 
 export default config;
