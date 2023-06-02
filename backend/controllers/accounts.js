@@ -3,13 +3,18 @@ import AccountService from "../services/accounts.js";
 
 const service = new AccountService();
 
-export async function getAllAccounts(req, res, next) {
+export async function getAccounts(req, res, next) {
   try {
-    const accounts = await service.find();
-    res.json({ accounts })
+    if (req.params.id) {
+      const accounts = await service.findOne(req.params.id);
+      res.status(200).json({ accounts })
+    } else {
+      const accounts = await service.find();
+      res.status(200).json({ accounts })
+    }
   } catch (error) {
     next(error);
   }
 }
 
-export default { getAllAccounts };
+export default { getAccounts };

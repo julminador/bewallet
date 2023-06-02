@@ -1,11 +1,9 @@
 import express from 'express';
-import accountCtrl from "../controllers/accounts.js";
+import controller from "../controllers/accounts.js";
 
 const router = express.Router();
 
-router.get('/', accountCtrl.getAllAccounts);
-
-//create res.status(201).json({})
-//not found res.status(404).json({})
+router.get('/:id', controller.getAccounts);
+router.get('/', controller.getAccounts);
 
 export default router;
