@@ -1,4 +1,3 @@
-import boom from "@hapi/boom";
 import sequelize from '../libs/sequelize.js';
 
 const { models } = sequelize;
@@ -19,17 +18,17 @@ export class Actives {
   };
 
   async update(data) {
-    const actives = await models.Account.update(data, {
+    const updatedActive = await models.Account.update(data, {
       where: { accountId: data.accountId },
     });
-    return actives;
+    return updatedActive;
   };
 
   async delete(accountId) {
-    const actives = await models.Account.destroy({
+    const deletedActive = await models.Account.destroy({
       where: { accountId },
     });
-    return actives;
+    return deletedActive;
   };
 }
 

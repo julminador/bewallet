@@ -15,7 +15,7 @@ export default {
   },
   production: {
     url: URI,
-    dialect: dbDialect,
+    dialect: config.dbDialect,
     timezone: '-05:00',
     define: {
       timestamps: false

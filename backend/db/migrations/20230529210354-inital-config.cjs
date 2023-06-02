@@ -26,7 +26,7 @@ module.exports = {
         allowNull: false,
         type: DataTypes.BOOLEAN,
       },
-      outcome: {
+      expense: {
         allowNull: false,
         type: DataTypes.BOOLEAN,
       },

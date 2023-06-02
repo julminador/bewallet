@@ -4,7 +4,7 @@ import ActiveService from "../services/actives.js";
 const service = new ActiveService();
 
 /**
- * Lista todos los activos
+ * List the active account
  */
 export async function getActives(req, res, next) {
   try {
@@ -16,7 +16,7 @@ export async function getActives(req, res, next) {
 }
 
 /**
- * Crea una cuenta de tipo activo
+ * Create a new active account
  */
 export async function createActive(req, res, next) {
   try {
@@ -25,7 +25,7 @@ export async function createActive(req, res, next) {
       ...body,
       active:1,
       income: 0,
-      outcome: 0,
+      expense: 0,
     }
     const newActive = await service.create(data);
     res.status(201).json({ newActive })
@@ -35,7 +35,7 @@ export async function createActive(req, res, next) {
 }
 
 /**
- * Modifica una cuenta de tipo activo
+ * Update an active account
  */
 export async function updateActive(req, res, next) {
   try {
@@ -54,7 +54,7 @@ export async function updateActive(req, res, next) {
 }
 
 /**
- * Elimina una cuenta de tipo activo
+ * Delete an active account
  */
 export async function deleteActive(req, res, next) {
   try {
