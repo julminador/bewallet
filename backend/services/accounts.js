@@ -15,6 +15,13 @@ export class Accounts {
     if (!accounts) throw boom.notFound('Product not found');
     return accounts;
   };
+
+  async delete(accountId) {
+    const deletedActive = await models.Account.destroy({
+      where: { accountId },
+    });
+    return deletedActive;
+  };
 }
 
 export default Accounts;

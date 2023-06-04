@@ -23,13 +23,6 @@ export class Actives {
     });
     return updatedActive;
   };
-
-  async delete(accountId) {
-    const deletedActive = await models.Account.destroy({
-      where: { accountId },
-    });
-    return deletedActive;
-  };
 }
 
 export default Actives;
