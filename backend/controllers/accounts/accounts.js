@@ -1,5 +1,5 @@
 import boom from "@hapi/boom";
-import AccountService from "../services/accounts.js";
+import AccountService from "../../services/accounts/accounts.js";
 
 const service = new AccountService();
 

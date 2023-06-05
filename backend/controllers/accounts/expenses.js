@@ -1,5 +1,5 @@
 import boom from "@hapi/boom";
-import ExpensesService from "../services/expenses.js";
+import ExpensesService from "../../services/accounts/expenses.js";
 
 const service = new ExpensesService();
 

@@ -1,5 +1,5 @@
 import boom from "@hapi/boom";
-import IncomeService from "../services/income.js";
+import IncomeService from "../../services/accounts/income.js";
 
 const service = new IncomeService();
 

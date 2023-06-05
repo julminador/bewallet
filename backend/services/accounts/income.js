@@ -1,4 +1,4 @@
-import sequelize from '../libs/sequelize.js';
+import sequelize from '../../libs/sequelize.js';
 
 const { models } = sequelize;
 

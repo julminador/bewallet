@@ -1,5 +1,5 @@
 import boom from "@hapi/boom";
-import ActiveService from "../services/actives.js";
+import ActiveService from "../../services/accounts/actives.js";
 
 const service = new ActiveService();
 
