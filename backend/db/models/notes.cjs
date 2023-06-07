@@ -63,8 +63,17 @@ const NoteSchema = {
 
 class Note extends Model {
   static associate(models) {
-    this.belongsTo(models.Account, { as: 'creditAccount' });
-    this.belongsTo(models.Account, { as: 'debitAccount' });
+    this.belongsTo(models.Account, {
+      as: 'creditAccount',
+      foreignKey: 'credit_id',
+      targetKey: 'accountId'
+    });
+
+    this.belongsTo(models.Account, {
+      as: 'debitAccount',
+      foreignKey: 'debit_id',
+      targetKey: 'accountId'
+    });
   }
 
   static config(sequelize) {
