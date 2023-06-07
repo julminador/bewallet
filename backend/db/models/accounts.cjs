@@ -14,7 +14,7 @@ const AccountSchema = {
     allowNull: false,
     type: DataTypes.STRING,
   },
-  active: {
+  asset: {
     allowNull: false,
     type: DataTypes.BOOLEAN,
   },

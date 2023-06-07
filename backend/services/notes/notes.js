@@ -24,10 +24,10 @@ export class Notes {
   }
 
   async delete(noteId) {
-    const deletedActive = await models.Note.destroy({
+    const deletedAsset = await models.Note.destroy({
       where: { noteId },
     });
-    return deletedActive;
+    return deletedAsset;
   };
 }
 

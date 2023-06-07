@@ -23,7 +23,7 @@ export async function createIncome(req, res, next) {
     const { body } = req;
     const data = {
       ...body,
-      active: 0,
+      asset: 0,
       income: 1,
       expense: 0,
     }

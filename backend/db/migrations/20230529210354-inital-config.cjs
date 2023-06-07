@@ -18,7 +18,7 @@ module.exports = {
         allowNull: false,
         type: DataTypes.STRING,
       },
-      active: {
+      asset: {
         allowNull: false,
         type: DataTypes.BOOLEAN,
       },

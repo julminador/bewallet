@@ -17,10 +17,10 @@ export class Accounts {
   };
 
   async delete(accountId) {
-    const deletedActive = await models.Account.destroy({
+    const deletedAsset = await models.Account.destroy({
       where: { accountId },
     });
-    return deletedActive;
+    return deletedAsset;
   };
 }
 

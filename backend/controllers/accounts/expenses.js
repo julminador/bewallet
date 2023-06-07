@@ -23,7 +23,7 @@ export async function createExpense(req, res, next) {
     const { body } = req;
     const data = {
       ...body,
-      active: 0,
+      asset: 0,
       income: 0,
       expense: 1,
     }
