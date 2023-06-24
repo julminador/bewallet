@@ -1,20 +1,36 @@
-function LastTransactions() {
+import { Row, Col } from "react-bootstrap";
+import { ListGroup } from 'react-bootstrap';
+
+function LastTransactions(props) {
+  const lastTransactions = [
+    {
+      category: "Salary",
+      value: 600,
+    },
+    {
+      category: "Bills",
+      value: -100,
+    },
+  ];
+
   return (
-    <div>
-      <h6>Last transactions</h6>
-      <div>
-        <p>
-          <span>Salary</span>
-          <span>$600</span>
-        </p>
-      </div>
-      <div>
-        <p>
-          <span>Bills</span>
-          <span>-$100</span>
-        </p>
-      </div>
-    </div>
+    <>
+      <h5>Last transactions</h5>
+      <ListGroup>
+        {lastTransactions.map((transaction) => (
+          <ListGroup.Item>
+            <Row>
+              <Col xs={9}>
+                {transaction.category}
+              </Col>
+              <Col xs={3}>
+                ${transaction.value}
+              </Col>
+            </Row>
+          </ListGroup.Item>
+        ))}
+      </ListGroup>
+    </>
   );
 }
 

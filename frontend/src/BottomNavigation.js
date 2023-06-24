@@ -1,16 +1,19 @@
+
+import { Row, Col } from "react-bootstrap";
+import { BiSolidPlusCircle } from 'react-icons/bi/index.esm.js';
+import "./BottomNavigation.css";
+
 function BottomNavigation() {
   return(
-    <div>
-      <a href="#">
-        <span>Op1</span>
-      </a>
-      <a href="#">
-        <span>Op2</span>
-      </a>
-      <a href="#">
-        <span>Op3</span>
-      </a>
-    </div>
+    <Row className="justify-content-md-center">
+      <Col>
+        <div className='bottomNav'>
+          <a className="rounded-button" href="#">
+            <BiSolidPlusCircle />
+          </a>
+        </div>
+      </Col>
+    </Row>
   )
 }
 
