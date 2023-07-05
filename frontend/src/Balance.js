@@ -2,33 +2,44 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card, Button, Row, Col } from "react-bootstrap";
 import './Balance.css';
 
-function Balance() {
+function Balance({
+  balance,
+  income,
+  expenses,
+}) {
   return (
     <>
-      <h5>My balance</h5>
-      <Card>
+      <h5>Overview</h5>
+      <Card bg="dark" text='white'>
         <Card.Body>
           <Card.Title>My balance</Card.Title>
           <Card.Text>
-            $500
-            <Row>
-              <Col xs={6}>
-                <small>Income</small>
-                <p>$600</p>
-              </Col>
-              <Col xs={6}>
-                <small>Expenses</small>
-                <p>$100</p>
-              </Col>
-            </Row>
+            ${balance}
           </Card.Text>
+          <Row>
+            <Col>
+              <Row>
+                <Col xs={12}>
+                  <small>Income</small>
+                </Col>
+                <Col xs={12}>
+                  <p>${income}</p>
+                </Col>
+              </Row>
+            </Col>
+            <Col>
+              <Row>
+                <Col xs={12}>
+                  <small>Expenses</small>
+                </Col>
+                <Col xs={12}>
+                  <p>${expenses}</p>
+                </Col>
+              </Row>
+            </Col>
+          </Row>
         </Card.Body>
       </Card>
-      <div className="d-grid gap-2">
-        <Button variant="secondary" size="lg">
-          Transfer
-        </Button>
-      </div>
     </>
   );
 }

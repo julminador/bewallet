@@ -8,7 +8,11 @@ function BottomNavigation() {
     <Row className="justify-content-md-center">
       <Col>
         <div className='bottomNav'>
-          <a className="rounded-button" href="#">
+          <a
+            className="rounded-button"
+            href="#"
+            onClick={ (event) => {console.log('Click!', event);} }
+          >
             <BiSolidPlusCircle />
           </a>
         </div>
